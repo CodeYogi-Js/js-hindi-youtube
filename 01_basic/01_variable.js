@@ -1,5 +1,5 @@
 //✅JavaScript Variable -->
-//A variable is container which store a value. In kitchen we have container to store rice, dal, sugar etc. similar to that variable in javascript store value of a contant.
+//A variable is container which store a value. In kitchen we have container to store rice, dal, sugar etc. similar to that variable in javascript store value of a constant.
 
 /*✅Rules for naming variable
 1. first character must be alphabet or underscore.

@@ -110,7 +110,10 @@ let num1, num2, num3
 num1 = num2 = num3 = 2 + 2
 
 
-//Increment Operator and Decrement Operator //prefix and postfix
+//Increment Operator and Decrement Operator 
+//Prefix and Postfix
+//Prefix () → increases the value before it’s used.
+//Postfix () → increases the value after it’s used.
 let gameCounter = 100
 gameCounter++;
 console.log(gameCounter)

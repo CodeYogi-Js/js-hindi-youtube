@@ -89,25 +89,23 @@
 
 
 //✅8. Check if an array is sorted.
-// const array = [2, 5, 7, 1, 9]
-const array = [1, 2, 5, 7, 9]
+const array = [2, 5, 7, 1, 9]
 let val = array[0]
+let isSorted = true;
 for (let i = 1; i < array.length; i++) {
-     if (val < array[i]) {
+     if (val <= array[i]) {
           val = array[i]
-          if (val > array[i]) {
-               console.log("array is not sorted.")
-               break;
-          } else {
-               continue;
-          }
+          continue;
      } else {
-          console.log("array is not sorted.")
+          console.log("array is not sorted")
+          isSorted = false;
           break;
      }
      
 }
-
+if(isSorted){
+     console.log("array is sorted")
+}
 
 
 //✅9.Merge two arrays into one combined array.

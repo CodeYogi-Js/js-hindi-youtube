@@ -90,20 +90,24 @@
 
 //✅8. Check if an array is sorted.
 // const array = [2, 5, 7, 1, 9]
-const array = [1,2, 5, 7, 9]
+const array = [1, 2, 5, 7, 9]
 let val = array[0]
-for(let i = 1; i <array.length; i++){
-    if(val < array[i] ){
-        val = array[i];
-        if(val > array[i]){
-            console.log(`array is sorted.`)
-            break;
-        }
-    }else{
-        console.log(`array is not sorted.`);
-        break;
-    }
+for (let i = 1; i < array.length; i++) {
+     if (val < array[i]) {
+          val = array[i]
+          if (val > array[i]) {
+               console.log("array is not sorted.")
+               break;
+          } else {
+               continue;
+          }
+     } else {
+          console.log("array is not sorted.")
+          break;
+     }
+     
 }
+
 
 
 //✅9.Merge two arrays into one combined array.
@@ -124,9 +128,9 @@ for(let i = 1; i <array.length; i++){
 
 
 //✅10.Remove repeated elements from an array and return a unique list (remove duplicates).
-const list = [23, 4, 34, 23, 5, 7, 9, 23, 7,9]
-const uniqueList = [...new Set(list)]
-console.log(uniqueList)
+// const list = [23, 4, 34, 23, 5, 7, 9, 23, 7,9]
+// const uniqueList = [...new Set(list)]
+// console.log(uniqueList)
 
 
 

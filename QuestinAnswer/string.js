@@ -1,19 +1,19 @@
-// //✅1. Find the length of a string. 
+// //✅1. Write a program that finds the length of a given string?
 // const userName = "Brendan Eich"
 // console.log(userName.length)
 
-// //✅2. Convert a string to uppercase. 
+// //✅2. Write a program that converts a given string into uppercase letters?
 // const sentence = "Royel Bengal Tiger"
 // console.log(sentence.toUpperCase())
 // //toUpperCase()andtoLocalUpperCase() work different when 
 // //work Local language like (Turkish).
 
 
-// //✅3.Convert a string to lowercase.
+// //✅3. Write a program that converts a given string into lowercase letters?
 // const str = "BRENDAN EICH"
 // console.log(str.toLowerCase())
 
-// //✅4.Trim spaces from the start and end of a string.
+// //✅4. Write a program that removes extra spaces from the beginning and end of a given string?
 // const lorem = "     Would you like me to also show     " 
 // // console.log(lorem.trim())
 // console.log(lorem.trimEnd())
@@ -21,36 +21,36 @@
 
 
 
-// //✅5.Check if a string contains a certain word. 
+// //✅5. Write a program that checks whether a given string contains a specific word?
 // const word = "Would you like me to also show"
 // console.log(word.includes("you"))
 
 
-// //✅6. Check if a string starts with a specific word.
+// //✅6. Write a program that checks whether a given string ends with a specific word?
 // const printing = "Hello world"
 // console.log(printing.startsWith("world"))
 
-// //✅7. Check if a string ends with a specific word.  
+// //✅7. Write a program that checks whether a given string ends with a specific word? 
 // const printings = "Hello world"
 // console.log(printings.endsWith("world"))
 
 
-// //✅8. Replace one word in a string with another.  
+// //✅8. Write a program that replaces one word in a given string with another word?
 // const strs = "Hello hope you all good."
 // console.log(strs.replace("you","me"))
 
 
-// //✅9. Split a sentence into words. 
+// //✅9. Write a program that splits a given sentence into individual words?
 // const sentence = "Hello world program"
 // console.log(sentence.split(" "))
 
 
-// //✅10. Join an array of words back into a sentence.  
+// //✅10. Write a program that joins an array of words back into a single sentence?  
 // const word = "hello world hope you all"
 // const copyWord = (word.split(" "))
 // console.log(copyWord.join(" "))
 
-// //✅11. Extract the first character of a string. 
+// //✅11. Write a program that extracts the first character from a given string?
 // const characters = "hello" 
 // const copyChar = characters.charAt(0)
 // console.log(copyChar)
@@ -61,27 +61,28 @@
 // const anotherWay2 = characters.slice(0,1)
 // console.log(anotherWay2)
 
-// //✅12. Extract the last character of a string.  
+// //✅12. Write a program that extracts the last character from a given string?
 // const character = "hello word"
 // console.log(character[(character.length -1)])
 // console.log(character.substring((character.length -1)))
 // console.log(character.charAt((character.length - 1)))
 // console.log(character.slice(character.length - 1))
 
-//✅13. Extract the first 5 characters of a string.  
+//✅13. Write a program that extracts the first 5 characters from a given string? 
 // const word = "hello world"
 // console.log(word.substring(0,5))
 // console.log(word.slice((0,5)))
 
 
 
-// //✅14. Extract the last 5 characters of a string.
+// //✅14. Write a program that extracts the last 5 characters from a given string?
 // const lastchar = "hello world djNight"  
 // console.log(lastchar.substring(lastchar.length - 5))
 // console.log(lastchar.slice(-5))
 
 
-// //✅15. Reverse a string manually (without `.reverse`).  
+// //✅15. Write a program that reverses a given string manually, without using the built‑in .reverse() method?
+  
 // const string = "manually"
 // const tempVal = string.split("")
 // const empty = []
@@ -94,18 +95,68 @@
 // console.log(text.split("").reverse().join(""))
 
 
-//✅16. Swap the case of each character (`"HeLLo"` → `"hEllO"`).
-const character = "HeLLo"
+//✅16. Write a program that swaps the case of each character in a given string (uppercase becomes lowercase, and lowercase becomes uppercase). For example, the string "HeLLo" should become "hEllO.?
 
-//✅17. Check if a string is empty.  
-//✅18. Check if two strings are equal ignoring case.  
+let character = "HeLLo"
+let convert = character.split("")
+for(let i = 0; i < convert.length; i++){
+    if(convert[i] === convert[i].toUpperCase()){
+       convert[i] = convert[i].toLowerCase()
+    }else{
+       convert[i] = convert[i].toUpperCase()
+    }
+}
+character = convert.join("")
+console.log(character)
 
-// ---
 
-// ## 🟡 Intermediate Level (Searching, Cleaning, Real‑World Use)
-// 19. Find the index of the first occurrence of a word.  
-// 20. Find the index of the last occurrence of a word.  
-// 21. Count how many times a word appears in a string.  
+//✅17. Write a program that checks whether a given string is empty (contains no characters.)?
+const emptyStr = "" 
+if(emptyStr === "" ){
+   console.log("string is empty.")
+}else{
+   console.log("string not empty.")
+}
+
+//✅18. Write a program that checks whether two given strings are equal, ignoring differences in uppercase and lowercase letters?
+const firstStr = "Hello";
+const secondStr = "hello";
+if (firstStr.toLowerCase() === secondStr.toLowerCase()) {
+  console.log("both are same.");
+} else {
+  console.log("both are not same.");
+}
+
+
+//🟡Intermediate Level (Searching, Cleaning, Real‑World Use)
+
+
+//✅19. Write a program that finds the position (index number) of the first time a specific word appears in the given string?
+// JavaScript is fun and JavaScript is powerful
+// Find the first occurrence of the word JavaScript
+ 
+const strings = "javaScript is fun and javaScript is powerful"
+console.log(strings.indexOf("javaScript"))
+
+
+//✅20. Write a program that finds the position (index number) of the last time a specific word appears in the given string?
+// JavaScript is fun and JavaScript is powerful
+// Find the last occurrence of the word JavaScript
+
+const text = "javaScript is fun and javaScript is powerful"
+console.log(text.lastIndexOf("javaScript"))
+
+
+//✅21. Write a program that counts how many times a specific word occurs within a given string? 
+const word = "Would you like me to tailor this sentence so it contains a word repeated twice, making it easier to test both first occurrence to and last to occurrence questions together"
+let words = word.split(" ")
+let count = 0;
+for(let i = 0; i < words.length; i++){
+   if(words[i] === "to"){
+      count++;
+   }
+}
+console.log("apper is specific word "+count+" time.")
 // 22. Extract a substring from a string.  
 // 23. Remove all spaces from a string.  
 // 24. Replace multiple spaces with a single space.  

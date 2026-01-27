@@ -1,22 +1,104 @@
-// ## 🟢 Beginner Level (Foundations)
-// 1. Find the length of a string.  
-// 2. Convert a string to uppercase.  
-// 3. Convert a string to lowercase.  
-// 4. Trim spaces from the start and end of a string.  
-// 5. Check if a string contains a certain word.  
-// 6. Check if a string starts with a specific word.  
-// 7. Check if a string ends with a specific word.  
-// 8. Replace one word in a string with another.  
-// 9. Split a sentence into words.  
-// 10. Join an array of words back into a sentence.  
-// 11. Extract the first character of a string.  
-// 12. Extract the last character of a string.  
-// 13. Extract the first 5 characters of a string.  
-// 14. Extract the last 5 characters of a string.  
-// 15. Reverse a string manually (without `.reverse`).  
-// 16. Swap the case of each character (`"HeLLo"` → `"hEllO"`).  
-// 17. Check if a string is empty.  
-// 18. Check if two strings are equal ignoring case.  
+// //✅1. Find the length of a string. 
+// const userName = "Brendan Eich"
+// console.log(userName.length)
+
+// //✅2. Convert a string to uppercase. 
+// const sentence = "Royel Bengal Tiger"
+// console.log(sentence.toUpperCase())
+// //toUpperCase()andtoLocalUpperCase() work different when 
+// //work Local language like (Turkish).
+
+
+// //✅3.Convert a string to lowercase.
+// const str = "BRENDAN EICH"
+// console.log(str.toLowerCase())
+
+// //✅4.Trim spaces from the start and end of a string.
+// const lorem = "     Would you like me to also show     " 
+// // console.log(lorem.trim())
+// console.log(lorem.trimEnd())
+// console.log(lorem.trimStart())
+
+
+
+// //✅5.Check if a string contains a certain word. 
+// const word = "Would you like me to also show"
+// console.log(word.includes("you"))
+
+
+// //✅6. Check if a string starts with a specific word.
+// const printing = "Hello world"
+// console.log(printing.startsWith("world"))
+
+// //✅7. Check if a string ends with a specific word.  
+// const printings = "Hello world"
+// console.log(printings.endsWith("world"))
+
+
+// //✅8. Replace one word in a string with another.  
+// const strs = "Hello hope you all good."
+// console.log(strs.replace("you","me"))
+
+
+// //✅9. Split a sentence into words. 
+// const sentence = "Hello world program"
+// console.log(sentence.split(" "))
+
+
+// //✅10. Join an array of words back into a sentence.  
+// const word = "hello world hope you all"
+// const copyWord = (word.split(" "))
+// console.log(copyWord.join(" "))
+
+// //✅11. Extract the first character of a string. 
+// const characters = "hello" 
+// const copyChar = characters.charAt(0)
+// console.log(copyChar)
+
+// const anotherWay = characters.substring(0,1)
+// console.log(anotherWay)
+
+// const anotherWay2 = characters.slice(0,1)
+// console.log(anotherWay2)
+
+// //✅12. Extract the last character of a string.  
+// const character = "hello word"
+// console.log(character[(character.length -1)])
+// console.log(character.substring((character.length -1)))
+// console.log(character.charAt((character.length - 1)))
+// console.log(character.slice(character.length - 1))
+
+//✅13. Extract the first 5 characters of a string.  
+// const word = "hello world"
+// console.log(word.substring(0,5))
+// console.log(word.slice((0,5)))
+
+
+
+// //✅14. Extract the last 5 characters of a string.
+// const lastchar = "hello world djNight"  
+// console.log(lastchar.substring(lastchar.length - 5))
+// console.log(lastchar.slice(-5))
+
+
+// //✅15. Reverse a string manually (without `.reverse`).  
+// const string = "manually"
+// const tempVal = string.split("")
+// const empty = []
+// for(let i = tempVal.length -1; i>=0; i--){
+//     empty.push(tempVal[i])
+// }
+// console.log(empty.join(""))
+
+// const text = "manually"
+// console.log(text.split("").reverse().join(""))
+
+
+//✅16. Swap the case of each character (`"HeLLo"` → `"hEllO"`).
+const character = "HeLLo"
+
+//✅17. Check if a string is empty.  
+//✅18. Check if two strings are equal ignoring case.  
 
 // ---
 

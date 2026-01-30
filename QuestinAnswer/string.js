@@ -179,7 +179,6 @@
 // console.log(fixedStr);
 
 
-
 //✅25. Write a function that takes a string as input and returns the same string, but with its first letter capitalized.
 // const firstLatter = function(word){
 //     if( word.length>0 && typeof(word) === "string"){
@@ -210,15 +209,45 @@
 //         return "please enter sentence......";
 //     }
 // }
-
 // const everyFirstLatterUpperCase = latterUpperCase("Would you     like me to also  show  you   how to collect.");
 // console.log(everyFirstLatterUpperCase);  
 
 
+// //✅27. Write a function in JavaScript that takes a string and a number as input, and returns the string repeated that many times in sequence.
+// const repSentence = (str,num)=>{
+//     return str.repeat(num)
+// }
+// console.log(repSentence("hello world",5))
 
-// 27. Repeat a string multiple times.  
-// 28. Pad a string with zeros until it reaches a certain length.  
-// 29. Pad a string with `*` or spaces until a certain length.  
+
+// //✅28. Pad a string with zeros until it reaches a certain length. 
+// let str = '123'
+// string = str.split("")
+// let addNum = []
+// let howMuch = 15
+// for(let i = howMuch - string.length; i >0; i--){
+//     let temp = '0'
+//     if(howMuch>string.length){
+//         addNum.push(temp)
+//     }
+// }
+// let final = addNum.concat(string).join("")
+// console.log(final) 
+
+
+////✅29. Write a function in JavaScript that takes Pad a string with `*` or spaces until a certain length. 
+// function padString(str, val){
+//     let temp = str.split("")
+//     const symbol = "*"
+//     let arr = []
+//     for(let i = val - temp.length; i>0; i--){
+//         arr.push(symbol)
+//     }
+//     return arr.concat(temp).join("")
+// }
+// console.log(padString("34dse3",10))
+
+
 // 30. Sort the characters of a string alphabetically.  
 // 31. Count vowels in a string.  
 // 32. Count consonants in a string.  

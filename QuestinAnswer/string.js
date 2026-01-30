@@ -26,7 +26,7 @@
 // console.log(word.includes("you"))
 
 
-// //✅6. Write a program that checks whether a given string ends with a specific word?
+// //✅6. Write a program that checks whether a given string strat with a specific word?
 // const printing = "Hello world"
 // console.log(printing.startsWith("world"))
 
@@ -95,73 +95,127 @@
 // console.log(text.split("").reverse().join(""))
 
 
-//✅16. Write a program that swaps the case of each character in a given string (uppercase becomes lowercase, and lowercase becomes uppercase). For example, the string "HeLLo" should become "hEllO.?
+// //✅16. Write a program that swaps the case of each character in a given string (uppercase becomes lowercase, and lowercase becomes uppercase). For example, the string "HeLLo" should become "hEllO.?
 
-let character = "HeLLo"
-let convert = character.split("")
-for(let i = 0; i < convert.length; i++){
-    if(convert[i] === convert[i].toUpperCase()){
-       convert[i] = convert[i].toLowerCase()
-    }else{
-       convert[i] = convert[i].toUpperCase()
-    }
-}
-character = convert.join("")
-console.log(character)
-
-
-//✅17. Write a program that checks whether a given string is empty (contains no characters.)?
-const emptyStr = "" 
-if(emptyStr === "" ){
-   console.log("string is empty.")
-}else{
-   console.log("string not empty.")
-}
-
-//✅18. Write a program that checks whether two given strings are equal, ignoring differences in uppercase and lowercase letters?
-const firstStr = "Hello";
-const secondStr = "hello";
-if (firstStr.toLowerCase() === secondStr.toLowerCase()) {
-  console.log("both are same.");
-} else {
-  console.log("both are not same.");
-}
+// let character = "HeLLo"
+// let convert = character.split("")
+// for(let i = 0; i < convert.length; i++){
+//     if(convert[i] === convert[i].toUpperCase()){
+//        convert[i] = convert[i].toLowerCase()
+//     }else{
+//        convert[i] = convert[i].toUpperCase()
+//     }
+// }
+// character = convert.join("")
+// console.log(character)
 
 
-//🟡Intermediate Level (Searching, Cleaning, Real‑World Use)
+// //✅17. Write a program that checks whether a given string is empty (contains no characters.)?
+// const emptyStr = "" 
+// if(emptyStr === "" ){
+//    console.log("string is empty.")
+// }else{
+//    console.log("string not empty.")
+// }
+
+// //✅18. Write a program that checks whether two given strings are equal, ignoring differences in uppercase and lowercase letters?
+// const firstStr = "Hello";
+// const secondStr = "hello";
+// if (firstStr.toLowerCase() === secondStr.toLowerCase()) {
+//   console.log("both are same.");
+// } else {
+//   console.log("both are not same.");
+// }
 
 
-//✅19. Write a program that finds the position (index number) of the first time a specific word appears in the given string?
-// JavaScript is fun and JavaScript is powerful
-// Find the first occurrence of the word JavaScript
+
+
+
+
+// //🟡Intermediate Level (Searching, Cleaning, Real‑World Use)
+
+
+// //✅19. Write a program that finds the position (index number) of the first time a specific word appears in the given string?
+// // JavaScript is fun and JavaScript is powerful
+// // Find the first occurrence of the word JavaScript
  
-const strings = "javaScript is fun and javaScript is powerful"
-console.log(strings.indexOf("javaScript"))
+// const strings = "javaScript is fun and javaScript is powerful"
+// console.log(strings.indexOf("javaScript"))
 
 
-//✅20. Write a program that finds the position (index number) of the last time a specific word appears in the given string?
-// JavaScript is fun and JavaScript is powerful
-// Find the last occurrence of the word JavaScript
+// //✅20. Write a program that finds the position (index number) of the last time a specific word appears in the given string?
+// // JavaScript is fun and JavaScript is powerful
+// // Find the last occurrence of the word JavaScript
 
-const text = "javaScript is fun and javaScript is powerful"
-console.log(text.lastIndexOf("javaScript"))
+// const text = "javaScript is fun and javaScript is powerful"
+// console.log(text.lastIndexOf("javaScript"))
 
 
-//✅21. Write a program that counts how many times a specific word occurs within a given string? 
-const word = "Would you like me to tailor this sentence so it contains a word repeated twice, making it easier to test both first occurrence to and last to occurrence questions together"
-let words = word.split(" ")
-let count = 0;
-for(let i = 0; i < words.length; i++){
-   if(words[i] === "to"){
-      count++;
-   }
-}
-console.log("apper is specific word "+count+" time.")
-// 22. Extract a substring from a string.  
-// 23. Remove all spaces from a string.  
-// 24. Replace multiple spaces with a single space.  
-// 25. Capitalize the first letter of a string.  
-// 26. Capitalize the first letter of every word in a sentence.  
+// //✅21. Write a program that counts how many times a specific word occurs within a given string? 
+// const word = "Would you like me to tailor this sentence so it contains a word repeated twice, making it easier to test both first occurrence to and last to occurrence questions together"
+// let words = word.split(" ")
+// let count = 0;
+// for(let i = 0; i < words.length; i++){
+//    if(words[i] === "to"){
+//       count++;
+//    }
+// }
+// console.log("apper is specific word "+count+" time.")
+
+
+// //✅22. Given a string, write a program to extract a part of it (a substring) between two specified positions.
+// const string = "javaScript is powerful"
+// const extra = string.substring(0,10)
+// console.log(extra)
+// // 23. Remove all spaces from a string.  
+// const str = "javaScript is fun to learn"
+// const noSpace = str.replaceAll(" ","")
+// console.log(noSpace)
+
+
+//✅24. Replace multiple spaces with a single space.  
+// const str = "JavaScript    is   fun";
+// const fixedStr = str.replace(/\s+/g, " ");
+// console.log(fixedStr);
+
+
+
+//✅25. Write a function that takes a string as input and returns the same string, but with its first letter capitalized.
+// const firstLatter = function(word){
+//     if( word.length>0 && typeof(word) === "string"){
+//         let tempArr = word.split("")
+//         tempArr[0] = tempArr[0].toUpperCase()
+//         return tempArr.join("")
+//     }else{
+//         return (`please pass string value.`)
+//     }
+// }
+// console.log(firstLatter("hello world"))
+
+
+//✅26. Write a function in JavaScript that capitalizes the first letter of every word in a given sentence.
+// function latterUpperCase(letter) {
+//     if (typeof letter === "string" && letter.length > 0) {
+//         let words = letter.replace(/\s+/g, " ").split(" ");
+//         let result = [];
+
+//         for (let i = 0; i < words.length; i++) {
+//             let word = words[i];
+//             let capitalized = word[0].toUpperCase() + word.slice(1);
+//             result.push(capitalized);
+//         }
+
+//         return result.join(" ");
+//     } else {
+//         return "please enter sentence......";
+//     }
+// }
+
+// const everyFirstLatterUpperCase = latterUpperCase("Would you     like me to also  show  you   how to collect.");
+// console.log(everyFirstLatterUpperCase);  
+
+
+
 // 27. Repeat a string multiple times.  
 // 28. Pad a string with zeros until it reaches a certain length.  
 // 29. Pad a string with `*` or spaces until a certain length.  

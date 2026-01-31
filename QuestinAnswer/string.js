@@ -374,9 +374,44 @@
 // console.log(hasSpecialCharacters("Hello World"));  // true  (contains space)
 // console.log(hasSpecialCharacters("123!"));         // true  (contains '!')
 
-// 36. Check if a string is a palindrome.  
-// 37. Reverse the order of words in a sentence.  
-// 38. Capitalize every alternate word in a sentence.  
+
+////✅36. Check if a string is a palindrome.  
+// function palindrome(strs){
+//     let str = strs.split("")
+//     let store = str.reverse().join("")
+//     if(strs === store){
+//         return `string is palindrome ${store}`
+//     }else{
+//         return `string is not palindrome ${store}`
+//     }
+// }
+// console.log(palindrome("hello"))
+// console.log(palindrome("madam"))
+// console.log(palindrome("racecar"))
+
+
+// //✅37. Reverse the order of words in a sentence.  
+// function reverseWords(strs){
+//     let str = strs.split(" ")
+//     return temp = str.reverse().join(" ")
+    
+// }
+// console.log(reverseWords("Hello world from JavaScirpt"))
+
+////✅38. Capitalize every alternate word in a sentence.
+function capAltWord(strs){
+    let str = strs.split(" ")
+    let temp = [];
+    for(let i = 0; i < str.length; i++){
+        if(i%2==0){
+            temp.push(str[i][0].toUpperCase())
+        }
+    }
+    return temp.join(" ")
+}
+console.log(capAltWord("hello world from javascript"))
+
+
 // 39. Remove duplicate words from a sentence.  
 // 40. Remove duplicate characters from a string.  
 

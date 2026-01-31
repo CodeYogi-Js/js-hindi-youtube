@@ -248,9 +248,72 @@
 // console.log(padString("34dse3",10))
 
 
-// 30. Sort the characters of a string alphabetically.  
-// 31. Count vowels in a string.  
-// 32. Count consonants in a string.  
+//// ✅30. Sort the characters of a string alphabetically.  
+// const string = "zxcvbnmlkjhgfdq"
+// let temp = string.split("")
+// const arrangeString = temp.sort().join("")
+// console.log(arrangeString)
+
+
+// //✅31. Write a function in JavaScript that takes a string as input and returns the number of vowels (a, e, i, o, u) present in the string.
+// function CountVowels(strs) {
+//     let str = strs.trim()
+//     if (typeof (str) === "string" && str.length !== 0) {
+//         let temp = str.toUpperCase().split("")
+//         let arr = []
+//         for (const key in temp) {
+//             if (temp[key] === "A" || temp[key] === "E" || temp[key] === "I" || temp[key] === "O" || temp[key] === "U") {
+//                 arr.push(temp[key])
+//             }
+//         }
+//         return arr.length
+//     } else {
+//         return `please pass original string value.`
+//     }
+// }
+// console.log(CountVowels())
+
+
+// //✅32. Write a function in JavaScript that takes a string as input and returns the number of consonants present in the string.
+// const consonentCount = (strs) => {
+//     if (undefined === strs) {
+//         return `Please pass valid sentence.`
+//     } else {
+//         if (typeof(strs) === "string" && strs.length> 0 ) {
+//             let str = strs.trim()
+//             let temp = str.toLowerCase().split("")
+//             let result = temp.filter((val)=>{
+//             return /[a-z]/.test(val) && val !== "a" && val !== "e" && val !== "i" && val !== "o" && val !== "u"
+//             })
+//             return result.length
+//     } else {
+//             return `Please pass valid sentence`
+//         }
+//     }
+// }
+// console.log(consonentCount("check if a string contains only digits"))
+
+
+//☑️☑️☑️☑️filter and .test() method work☑️☑️☑️☑️
+// const mixedArray = [
+//   "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",  // 15 letters
+//   "1","2","3","4","5","6","7","8","9",                         // 9 digits
+//   " "                                                          // 1 space
+// ];
+// const count = mixedArray.filter((char)=>(/[a-z]/.test(char)&& (char !== "a" && char !=="e" && char !=="i" && char !=="o" && char!=="u")))
+// console.log(count);
+
+// -  test() checks if the regex matches the value of char.
+// -  It returns true if char is a lowercase letter, otherwise false.
+// •    (filter)  is a higher‑order array method.
+// • 	It takes a callback function as an argument.
+// • 	That callback runs once for each element in the array.
+// • 	If the callback returns true, the element is kept.
+// • 	If the callback returns false, the element is removed.
+// • 	Finally,  returns a new array with only the elements that passed the test.
+
+
+
 // 33. Check if a string contains only digits.  
 // 34. Check if a string contains only alphabets.  
 // 35. Check if a string contains special characters.  

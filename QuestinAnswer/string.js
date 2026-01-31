@@ -314,9 +314,66 @@
 
 
 
-// 33. Check if a string contains only digits.  
-// 34. Check if a string contains only alphabets.  
-// 35. Check if a string contains special characters.  
+// // ✅ 33. Check if a string contains only digits.
+// const isOnlyDigits = (str) => {
+//     // Regular expression: ^[0-9]+$
+//     // ^  → start of string
+//     // [0-9] → any digit from 0 to 9
+//     // + → one or more digits
+//     // $ → end of string
+//     return /^[0-9]+$/.test(str);
+// };
+// console.log(isOnlyDigits("12345"));   // true
+// console.log(isOnlyDigits("00123"));   // true
+// console.log(isOnlyDigits("123a45"));  // false
+// console.log(isOnlyDigits("123 45"));  // false
+// console.log(isOnlyDigits(""));  
+
+// // ☑️☑️
+// const checkCharacter = (str)=>{
+//     let temp = str.split("").map(function(char){
+//          if(/[0-9]/.test(char)){
+//             return `${char} is a digit`
+//         }else if(/[a-zA-Z]/.test(char)){
+//             return `${char} is a alphaber`
+//         }else{
+//             return `${char} is Special Symbol`
+//         }
+//     })
+//     return temp;
+// }
+// console.log(checkCharacter("abc134  !"))
+
+
+// // ✅ 34. Check if a string contains only alphabets.
+// const isOnlyAlphabets = (str) => {
+//     // Regular expression: ^[a-zA-Z]+$
+//     // ^  → start of string
+//     // [a-zA-Z] → any alphabet (lowercase or uppercase)
+//     // + → one or more
+//     // $ → end of string
+//     return /^[a-zA-Z]+$/.test(str);
+// };
+// console.log(isOnlyAlphabets("HelloWorld")); // true
+// console.log(isOnlyAlphabets("abcXYZ"));     // true
+// console.log(isOnlyAlphabets("abc123"));     // false
+// console.log(isOnlyAlphabets("abc!"));       // false
+// console.log(isOnlyAlphabets("abc def"));    // false
+
+
+// // ✅ 35. Check if a string contains special characters.
+// const hasSpecialCharacters = (str) => {
+//     // Regular expression: [^a-zA-Z0-9]
+//     // ^ inside [] means "NOT"
+//     // So this matches anything that is NOT a letter or digit
+//     return /[^a-zA-Z0-9]/.test(str);
+// };
+// console.log(hasSpecialCharacters("HelloWorld"));   // false (only alphabets)
+// console.log(hasSpecialCharacters("Hello123"));     // false (alphabets + digits)
+// console.log(hasSpecialCharacters("Hello@123"));    // true  (contains '@')
+// console.log(hasSpecialCharacters("Hello World"));  // true  (contains space)
+// console.log(hasSpecialCharacters("123!"));         // true  (contains '!')
+
 // 36. Check if a string is a palindrome.  
 // 37. Reverse the order of words in a sentence.  
 // 38. Capitalize every alternate word in a sentence.  

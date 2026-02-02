@@ -184,3 +184,132 @@ const el = document.getElementById("link");
 el.setAttribute("href", "https://google.com");
 el.setAttribute("title", "Google Link");
 ```
+
+### **style**
+1️⃣`.style` is a property of an HTML element used to read or change inline CSS styles using JavaScript.
+- It works with inline styles only
+- CSS properties are written in camelCase
+- Used to change styles dynamically
+
+**Example**
+```html
+<div id="box"></div>
+```
+```js
+const el = document.getElementById("box");
+
+el.style.color = "red";
+el.style.backgroundColor = "black";
+el.style.fontSize = "20px";
+```
+
+2️⃣`.cssText` is a property of the `style` object used to get or set multiple inline CSS styles at once.
+- It works with inline styles
+- Styles are written as CSS text (string)
+- Setting it overwrites all existing inline styles
+
+**Example**
+```js
+const el = document.getElementById("box");
+
+el.style.cssText = "color: red; background-color: black; font-size: 20px;";
+```
+**Reading styles**
+```JS
+console.log(el.style.cssText);
+```
+
+3️⃣`Using setAttribute("style")`
+
+**Old-school but still valid.**
+```js
+el.setAttribute("style", "color: blue; font-size: 18px;");
+```
+**❌ Cons**
+- Replaces previous inline styles
+- Not recommended for modern apps
+
+4️⃣`classList` is used to add, remove, toggle, and check CSS classes on an HTML element.
+
+***VERY IMPORTANT*** `classList does NOT style anything itself. It only adds or removes class names. CSS does the styling.`
+```html
+<button id="btn">Click me</button>
+
+<div id="box" class="box">
+  I am a box
+</div>
+```
+```css
+.box {
+  width: 150px;
+  height: 150px;
+  background: lightgray;
+  margin-top: 10px;
+}
+
+.active {
+  background: green;
+}
+
+.hidden {
+  display: none;
+}
+```
+```js
+Get the Element in JavaScript
+const box = document.getElementById("box");
+const btn = document.getElementById("btn");
+```
+| Method       | Meaning                           |
+| ------------ | --------------------------------- |
+| `add()`      | Add a class                       |
+| `remove()`   | Remove a class                    |
+| `toggle()`   | Add if missing, remove if present |
+| `contains()` | Check if class exists             |
+
+
+5️⃣`setProperty()` is used to **change CSS variables using JavaScript**.
+**
+Think of CSS variables as **settings** and `setProperty()` as **changing those settings**.
+
+**Example**
+```css
+:root {
+  --main-color: blue;
+}
+```
+
+```js
+document.documentElement.style.setProperty("--main-color", "red");
+```
+This changes `--main-color` everywhere it’s used in CSS.
+
+**Why use it?**
+
+* Change **theme colors**, spacing, animation speed
+* One JS change updates **many elements**
+* Keeps **design in CSS**, logic in JS
+
+**Simple rule:**
+
+> Use ***setProperty()*** when you want **global style control**, not one element styling.
+
+6️⃣`getComputedStyle()` is used to **read the final CSS styles of an element**.
+It shows the **actual value** after CSS, classes, media queries, and browser defaults are applied.
+**Example**
+```js
+const styles = window.getComputedStyle(box);
+
+console.log(styles.color);
+console.log(styles.fontSize);
+```
+**Why use it?**
+
+* Check styles set by **CSS, not JS**
+* Read **dynamic or responsive values**
+* Useful for **animations, calculations, debugging**
+
+**Simple rule:**
+
+> Use `getComputedStyle()` when you want to **read styles**, not change them.
+

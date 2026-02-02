@@ -256,9 +256,13 @@ el.setAttribute("style", "color: blue; font-size: 18px;");
 }
 ```
 ```js
-Get the Element in JavaScript
-const box = document.getElementById("box");
-const btn = document.getElementById("btn");
+box.classList.add("active");//➕ add class
+
+box.classList.remove("active");//➖ remove class
+
+box.classList.toggle("active");//🔁 toggle class
+
+box.classList.contains("active"); //❓ check class true / false
 ```
 | Method       | Meaning                           |
 | ------------ | --------------------------------- |

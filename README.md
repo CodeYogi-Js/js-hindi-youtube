@@ -125,3 +125,62 @@ document.getElementsByTagName("p");
 document.getElementsByTagName("div");
 ```
 ### ***HTMLCollection vs NodeList***
+
+
+### ***Reading & changing content***
+1️⃣`.id` is a property of an HTML element used to get or set the element’s id.
+- Returns the id value as a string
+- Can be used to read or change the id
+
+**Example**
+```html
+<div id="box"></div>
+```
+```js
+const el = document.getElementById("box");
+console.log(el.id);      // "box"
+
+el.id = "newBox";        // change id
+```
+
+2️⃣`.className` is a property of an HTML element used to get or set the element’s class value.
+- Returns all classes as a string
+- Used to read or overwrite classes
+
+**Example**
+```html
+<div class="card active"></div>
+```
+```js
+const el = document.querySelector(".card");
+console.log(el.className);   // "card active"
+
+el.className = "card disabled";
+```
+***❌ You cannot write element.class in JS, because class is a reserved keyword in JavaScript (used for class MyClass { ... } syntax).***
+
+3️⃣`getAttribute()` is a method of an HTML element used to read the value of a specified attribute.
+- Takes the attribute name as a string
+- Returns the attribute value or null if not present
+
+**Example**
+```html
+<a id="link" href="https://example.com">Example</a>
+```
+```js
+const el = document.getElementById("link");
+console.log(el.getAttribute("href")); // "https://example.com"
+console.log(el.getAttribute("id"));   // "link
+```
+
+4️⃣`setAttribute()` is a method of an HTML element used to set or update the value of a specified attribute.
+- Takes attribute name and value as arguments
+- Can add new attributes or modify existing ones
+
+**Example**
+
+```js
+const el = document.getElementById("link");
+el.setAttribute("href", "https://google.com");
+el.setAttribute("title", "Google Link");
+```

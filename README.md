@@ -372,3 +372,105 @@ console.log(styles.fontSize);
 
 > Use `getComputedStyle()` when you want to **read styles**, not change them.
 
+### **DOM tree navigation**
+1️⃣`.children` is a property used to get all child elements of a parent element.
+* Returns **only element nodes** (HTML elements)
+* Ignores **text nodes and comments**
+* Returns an **HTMLCollection**
+* The collection is **live**
+
+**Example**
+
+```html
+<ul id="list">
+  <li>One</li>
+  <li>Two</li>
+</ul>
+```
+
+```js
+const parent = document.getElementById("list");
+
+console.log(parent.children);     // HTMLCollection
+console.log(parent.children[0]);  // <li>One</li>
+console.log(parent.children.length);
+```
+
+> **`.children`** is a property used to access all child elements of a parent element. It returns an HTMLCollection containing only element nodes.
+
+**Important interview point ⚠️**
+
+* `.children` ❌ does NOT include text nodes
+* `.childNodes` ✅ includes text + comments + elements
+
+---
+
+2️⃣`.firstElementChild` is a property used to get the first child element of a parent element.**
+
+* Returns **only an element node**
+* Ignores text and comment nodes
+* Returns **null** if no child exists
+
+**Example**
+
+```js
+const parent = document.getElementById("list");
+console.log(parent.firstElementChild);
+```
+
+---
+
+
+
+3️⃣`.lastElementChild` is a property used to get the last child element of a parent element.
+
+* Returns **only an element node**
+* Ignores text and comment nodes
+* Returns **null** if no child exists
+ **Example** 
+
+```js
+console.log(parent.lastElementChild);
+```
+
+> **`firstElementChild`** returns the first child HTML element of a parent element.
+> **`lastElementChild`** returns the last child HTML element of a parent element.
+---
+4️⃣`.parentElement` is a property used to get the parent HTML element of a given element. 
+* Returns **only an element node**
+* If no parent element exists, it returns **null**
+* Skips non-element nodes
+
+ **Example**
+
+```html
+<div id="box">
+  <p id="text">Hello</p>
+</div>
+```
+
+```js
+const child = document.getElementById("text");
+console.log(child.parentElement); // <div id="box">
+```
+
+---
+
+
+
+> **`.parentElement`** is a property used to access the parent HTML element of a given element.
+
+**Important interview point ⚠️** 
+
+* `.parentElement` → returns **only element**
+* `.parentNode` → may return **document or text node**
+
+5️⃣
+
+
+
+
+
+ 
+
+

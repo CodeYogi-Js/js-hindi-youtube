@@ -185,6 +185,61 @@ el.setAttribute("href", "https://google.com");
 el.setAttribute("title", "Google Link");
 ```
 
+5️⃣`.innerHTML` is a property used to get or set the HTML content inside an element.
+* It reads **HTML + text**
+* Can **add or replace HTML elements**
+* Be careful with user input (security risk)
+**Example**
+
+```html
+<div id="box"><b>Hello</b></div>
+```
+
+```js
+const el = document.getElementById("box");
+console.log(el.innerHTML);   // "<b>Hello</b>"
+
+el.innerHTML = "<p>Hi</p>";
+```
+6️⃣`.innerText` is a property used to get or set the visible text content of an element.
+* Returns **only visible text**
+* Respects **CSS (display, visibility)**
+* Ignores hidden text
+
+**Example**
+```js
+console.log(el.innerText);
+el.innerText = "Hello World";
+```
+7️⃣`.textContent` is a property used to get or set all text content of an element.**
+* Returns **all text**, including hidden text
+* Faster than `innerText`
+* Does NOT care about CSS
+
+**Example**
+
+```js
+console.log(el.textContent);
+el.textContent = "Hello World";
+```
+
+---
+
+> **`innerHTML`** is used to read or change HTML content inside an element.
+> **`innerText`** is used to read or change only the visible text content.
+> **`textContent`** is used to read or change all text content, including hidden text.
+
+
+| Property      | Reads HTML | Reads Hidden Text | Affected by CSS |
+| ------------- | ---------- | ----------------- | --------------- |
+| `innerHTML`   | ✅          | ❌                 | ❌               |
+| `innerText`   | ❌          | ❌                 | ✅               |
+| `textContent` | ❌          | ✅                 | ❌               |
+---
+* `innerHTML` → **HTML + text**
+* `innerText` → **visible text only**
+* `textContent` → **all text**
+---
 ### **style**
 1️⃣`.style` is a property of an HTML element used to read or change inline CSS styles using JavaScript.
 - It works with inline styles only

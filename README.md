@@ -464,8 +464,100 @@ console.log(child.parentElement); // <div id="box">
 
 * `.parentElement` → returns **only element**
 * `.parentNode` → may return **document or text node**
+---
+5️⃣`.nextElementSibling` is a property used to get the next sibling HTML element of an element.
 
-5️⃣
+* Returns **only element nodes**
+* Skips text and comment nodes
+* Returns **null** if no next element exists
+
+**Example**
+
+```js
+const item = document.querySelector(".item");
+console.log(item.nextElementSibling);
+```
+
+---
+
+
+
+6️⃣`.previousElementSibling` is a property used to get the previous sibling HTML element of an element.
+
+* Returns **only element nodes**
+* Skips text and comment nodes
+* Returns **null** if no previous element exists
+
+**Example** 
+
+```js
+console.log(item.previousElementSibling);
+```
+
+**Interview-ready explanation (polished)**
+
+> **`nextElementSibling`** returns the next HTML element at the same level.
+> **`previousElementSibling`** returns the previous HTML element at the same level.
+
+---
+
+**One-line memory trick 🧠**
+
+* `nextElementSibling` → **move right**
+* `previousElementSibling` → **move left**
+
+---
+
+7️⃣`.childNodes` is a property used to get all child nodes of a parent node.
+
+* Returns **all types of nodes**
+  * element nodes
+  * text nodes (spaces, line breaks)
+  * comment nodes
+* Returns a **NodeList**
+* The NodeList is **live** (in most browsers)
+
+**Example**
+
+```html
+<div id="box">
+  <p>Hello</p>
+  <!-- comment -->
+</div>
+```
+
+```js
+const parent = document.getElementById("box");
+
+console.log(parent.childNodes);
+console.log(parent.childNodes[0]); // text node (newline/space)
+```
+
+---
+
+**Interview-ready explanation (polished)**
+
+> **`.childNodes`** is a property used to access all child nodes of a parent node, including elements, text nodes, and comments.
+
+---
+
+## Important interview difference ⚠️
+
+| Property     | Includes text nodes | Returns        |
+| ------------ | ------------------- | -------------- |
+| `children`   | ❌ No                | HTMLCollection |
+| `childNodes` | ✅ Yes               | NodeList       |
+
+---
+
+**One-line memory trick 🧠**
+
+> **`.childNodes` → everything inside (elements + text + comments)**
+
+
+
+
+
 
 
 

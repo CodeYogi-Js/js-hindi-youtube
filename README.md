@@ -33,7 +33,7 @@ https://example.com/page.html
 ```
 
 ### **document.links**
-`document.link`s returns a collection of all links in the document.
+`document.links` returns a collection of all links in the document.
 
 - It includes only `<a>` and `<area>`elements
 - Only links with href attribute are included
@@ -125,6 +125,17 @@ document.getElementsByTagName("p");
 document.getElementsByTagName("div");
 ```
 ### ***HTMLCollection vs NodeList***
+
+
+| Feature              | NodeList                                 | HTMLCollection                                             |
+| -------------------- | ---------------------------------------- | ---------------------------------------------------------- |
+| Type                 | A collection of nodes                    | A collection of HTML elements only                         |
+| Includes             | Element nodes, text nodes, comment nodes | Only element nodes                                         |
+| Excludes             | —                                        | Text nodes, comment nodes                                  |
+| Commonly returned by | querySelectorAll(), childNodes           | children, getElementsByClassName(), getElementsByTagName() |
+
+---
+
 
 
 ### ***Reading & changing content***
@@ -666,11 +677,141 @@ parent.append(div, " World");
 | `appendChild()` | ❌            | ❌              | Node      |
 | `append()`      | ✅            | ✅              | undefined |
 
+> **append → add many, add text**
+---
+### **Edit and remove**
+
+ `.outerHTML` is a property used to get or set the entire HTML of an element, including the element itself. 
+
+* Reads **HTML + the element itself**
+* Setting it **replaces the whole element**
+* Works for **reading and changing content**
+
+**Example** 
+
+```html
+<div id="box"><p>Hello</p></div>
+```
+
+```js
+const el = document.getElementById("box");
+
+console.log(el.outerHTML);
+// <div id="box"><p>Hello</p></div>
+
+el.outerHTML = "<section>New Content</section>";
+```
+
+📌 After setting `outerHTML`, the **original element is removed** from the DOM.
+
 ---
 
+## Interview-ready explanation (polished)
+
+> **`.outerHTML`** is a property used to read or replace the complete HTML of an element, including the element itself.
+
+---
+
+## Important interview difference ⚠️
+
+| Property    | Includes element itself |
+| ----------- | ----------------------- |
+| `innerHTML` | ❌ No                    |
+| `outerHTML` | ✅ Yes                   |
+
+---
+
+**One-line memory trick 🧠**
+
+> **innerHTML → inside only**
+> **outerHTML → inside + element**
+
+---
+2️⃣ `replaceWith()` is a DOM method used to replace an element with another node or text.** 
+
+* Replaces the **element itself 
+* Can replace with **element, text, or multiple nodes**
+* The original element is **removed from the DOM**
+* Modern and cleaner than `replaceChild()`
+
+**Example **
+
+```js
+const oldEl = document.getElementById("old");
+
+const newEl = document.createElement("div");
+newEl.innerText = "New Element";
+
+oldEl.replaceWith(newEl);
+```
+
+ **Replace with text **
+
+```js
+oldEl.replaceWith("Hello World");
+```
+
+ **Interview-ready explanation (polished)** 
+
+> **`replaceWith()`** is a DOM method used to replace an existing element with a new element or text.
+
+---
+
+**mportant interview comparison ⚠️** 
+
+| Method          | What it replaces  |
+| --------------- | ----------------- |
+| `innerHTML`     | Content inside    |
+| `outerHTML`     | Element + content |
+| `replaceWith()` | Element itself    |
+
+---
+
+**One-line memory trick 🧠**
+
+> **replaceWith → remove old, insert new**
+
+---
+3️⃣`remove()` is a DOM method used to remove an element from the document.** 
+
+* Removes the **element itself**
+* No parent reference needed
+* Modern and simple
+* The element is removed permanently from the DOM
+
+**Example**
+
+```js
+const el = document.getElementById("box");
+el.remove();
+```
+
+---
+
+**Interview-ready explanation (polished)**
+
+> **`remove()`** is a DOM method used to delete an element directly from the DOM.
+
+---
+
+## Important interview comparison ⚠️
+
+| Method          | Needs parent |
+| --------------- | ------------ |
+| `remove()`      | ❌ No         |
+| `removeChild()` | ✅ Yes        |
+
+---
+
+**One-line memory trick 🧠**
+
+> **remove → delete element directly**
 
 
-> **append → add many, add text**
+
+
+
+
 
 
 

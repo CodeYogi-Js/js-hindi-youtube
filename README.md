@@ -809,6 +809,175 @@ el.remove();
 
 
 
+## **Events (VERY important)**
+1️⃣`addEventListener()` is a method used to attach an event handler to an element.
+
+* It listens for a **specific event** (click, input, keydown, etc.)
+* Executes a **callback function** when the event happens
+* Allows **multiple event listeners** on the same element
+
+**Syntax**
+
+```js
+element.addEventListener("event", function);
+```
+
+### Example
+
+```html
+<button id="btn">Click me</button>
+```
+
+```js
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", function () {
+  console.log("Button clicked");
+});
+```
+
+
+2️⃣`event.target` refers to the element on which the event actually occurred.
+
+* It tells **which element triggered the event**
+* Very useful in **event delegation**
+
+**Example**
+
+```js
+btn.addEventListener("click", function (event) {
+  console.log(event.target);      // <button id="btn">
+  console.log(event.target.id);   // "btn"
+});
+```
+
+---
+
+**Combined example (important 🔥)**
+
+```html
+<ul id="list">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+```
+
+```js
+const list = document.getElementById("list");
+
+list.addEventListener("click", function (event) {
+  console.log(event.target);        // clicked <li>
+  event.target.style.color = "red";
+});
+```
+
+👉 Even though the event is added to `<ul>`,
+👉 `event.target` tells **which `<li>` was clicked**.
+
+---
+
+
+
+3️⃣`event.currentTarget` refers to the element on which the event listener is attached.
+
+* It is the **element handling the event**
+* Always the same inside that listener
+* Different from `event.target`
+
+**Simple example**
+```html
+<ul id="list">
+  <li>One</li>
+  <li>Two</li>
+</ul>
+```
+
+```js
+const list = document.getElementById("list");
+
+list.addEventListener("click", function (event) {
+  console.log(event.target);        // <li> (clicked element)
+  console.log(event.currentTarget); // <ul> (listener element)
+});
+```
+
+---
+
+## Key difference (🔥 interview point)
+
+| Property              | Refers to                       |
+| --------------------- | ------------------------------- |
+| `event.target`        | Element that was clicked        |
+| `event.currentTarget` | Element with the event listener |
+
+---
+
+## Interview-ready explanation (polished)
+
+> **`event.currentTarget`** refers to the element to which the event handler is attached, while **`event.target`** refers to the element that triggered the event.
+
+---
+
+
+🔟G`removeEventListener()` is used to remove an event listener that was previously added with `addEventListener()`.
+
+* It stops the event from working
+* The **same function reference** must be used
+* Anonymous functions ❌ cannot be removed
+
+---
+
+## Basic example
+
+```html
+<button id="btn">Click</button>
+```
+
+```js
+const btn = document.getElementById("btn");
+
+function handleClick() {
+  console.log("Button clicked");
+}
+
+btn.addEventListener("click", handleClick);
+
+// remove event
+btn.removeEventListener("click", handleClick);
+```
+
+---
+
+## Important interview point ⚠️
+
+❌ This will NOT work:
+
+```js
+btn.addEventListener("click", function () {
+  console.log("Hi");
+});
+
+btn.removeEventListener("click", function () {
+  console.log("Hi");
+});
+```
+
+✅ Because both functions are **different references**.
+
+> **addEventListener → start listening**
+> **removeEventListener → stop listening**
+
+---
+
+
+
+
+
+
+
+
+
 
 
 

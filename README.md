@@ -920,7 +920,7 @@ list.addEventListener("click", function (event) {
 ---
 
 
-🔟G`removeEventListener()` is used to remove an event listener that was previously added with `addEventListener()`.
+4️⃣`removeEventListener()` is used to remove an event listener that was previously added with `addEventListener()`.
 
 * It stops the event from working
 * The **same function reference** must be used
@@ -969,18 +969,235 @@ btn.removeEventListener("click", function () {
 > **removeEventListener → stop listening**
 
 ---
+**`event.preventDefault()` is used to stop the browser’s default behavior.**
+
+* Commonly used in **forms**
+* Prevents page reload on submit
+* Gives JavaScript full control
+
+### Example
+
+```html
+<form id="form">
+  <input type="text" id="name">
+  <button type="submit">Submit</button>
+</form>
+```
+
+```js
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log("Form submitted without reload");
+});
+```
+
+---
+
+## `.value`
+
+**`.value` is a property used to get or set the value of input, textarea, or select elements.**
+
+### Example
+
+```js
+const input = document.getElementById("name");
+
+console.log(input.value); // read value
+input.value = "Babu";     // set value
+```
+
+---
+
+## `parseInt()`
+
+**`parseInt()` is a JavaScript function used to convert a string into an integer number.**
+
+* Removes non-number characters
+* Returns `NaN` if conversion fails
+
+### Example
+
+```js
+const num = "25";
+console.log(parseInt(num)); // 25
+```
+
+With input value:
+
+```js
+const age = parseInt(input.value);
+```
+
+---
+
+## Combined real example (🔥 interview-friendly)
+
+```html
+<form id="form">
+  <input type="text" id="age">
+  <button>Submit</button>
+</form>
+```
+
+```js
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const ageValue = document.getElementById("age").value;
+  const age = parseInt(ageValue);
+
+  console.log(age);
+});
+```
+
+---
+
+## Interview-ready explanation (polished)
+
+> **`event.preventDefault()`** stops the default browser behavior.
+> **`.value`** is used to read or set input values.
+> **`parseInt()`** converts string values into integer numbers.
+
+---
+
+## One-line memory trick 🧠
+
+* `preventDefault()` → **stop browser**
+* `.value` → **get input**
+* `parseInt()` → **string → number**
 
 
+If you’re asking **“how many parse functions exist in JavaScript?”** — here’s the clean, correct answer 👇
+
+---
+
+## JavaScript has **3 main “parse” functions**
+
+### 1️⃣ `parseInt()`
+
+👉 Parses an **integer** from a string
+
+```js
+parseInt("10px", 10); // 10
+```
+
+---
+
+### 2️⃣ `parseFloat()`
+
+👉 Parses a **decimal (floating-point) number** from a string
+
+```js
+parseFloat("10.75px"); // 10.75
+```
+
+---
+
+### 3️⃣ `JSON.parse()`
+
+👉 Parses **JSON string → JavaScript object**
+
+```js
+JSON.parse('{"name":"Babu","age":22}');
+```
+
+---
+
+## Quick comparison 🧠
+
+| Function       | Purpose                 |
+| -------------- | ----------------------- |
+| `parseInt()`   | String → Integer        |
+| `parseFloat()` | String → Decimal        |
+| `JSON.parse()` | JSON string → JS object |
+
+---
 
 
+# add later
 
+## `setTimeout()`
 
+**`setTimeout()` runs a function once after a specified delay.**
 
+* Executes **only one time**
+* Delay is in **milliseconds**
+* Returns a **timer ID**
 
+### Example
 
+```js
+setTimeout(() => {
+  console.log("Runs once after 2 seconds");
+}, 2000);
+```
 
+---
 
+## `setInterval()`
 
+**`setInterval()` runs a function repeatedly after a specified interval.**
 
+* Executes **again and again**
+* Interval is in **milliseconds**
+* Returns a **timer ID**
 
+### Example
 
+```js
+setInterval(() => {
+  console.log("Runs every 1 second");
+}, 1000);
+```
+
+---
+
+## Clearing timers (important 🔥)
+
+```js
+const timeoutId = setTimeout(() => {
+  console.log("Hello");
+}, 3000);
+
+clearTimeout(timeoutId);
+```
+
+```js
+const intervalId = setInterval(() => {
+  console.log("Tick");
+}, 1000);
+
+clearInterval(intervalId);
+```
+
+---
+
+## Interview-ready explanation (polished)
+
+> **`setTimeout()`** is used to execute a function once after a delay.
+> **`setInterval()`** is used to execute a function repeatedly at fixed intervals.
+
+---
+
+## One-line memory trick 🧠
+
+> **setTimeout → once later**
+> **setInterval → repeat always**
+
+---
+
+### Verdict ✅
+
+✔ Concept — **correct**
+✔ Usage — **real-world ready**
+✔ Interview-safe — **yes**
+
+If you want next:
+
+* `requestAnimationFrame`
+* `clearTimeout` vs `clearInterval`
+* JS event loop (🔥 interview topic)
+
+Just say 😄
